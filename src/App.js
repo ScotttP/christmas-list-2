@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import giftIdeas from "./data";
+import GiftsCard from "./gifts";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			gifts: giftIdeas,
+		};
+	}
+	render() {
+		const rendering = this.state.gifts.map((item, i) => (
+			<GiftsCard
+				className="gifts"
+				key={item.id}
+				id={item.name + i}
+				gifts={this.state.gifts}
+				index={i}
+			></GiftsCard>
+		));
+		return <div id="giftCardContainer">{rendering}</div>;
+	}
 }
-
-export default App;
