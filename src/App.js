@@ -20,6 +20,13 @@ export default class App extends React.Component {
 				index={i}
 			></GiftsCard>
 		));
-		return <div id="giftCardContainer">{rendering}</div>;
+		return (
+			<div>
+				<header id="header">
+					<b>Scott's Gift List</b>
+				</header>
+				<div id="giftCardContainer">{rendering}</div>
+			</div>
+		);
 	}
 }
