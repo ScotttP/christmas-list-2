@@ -11,7 +11,6 @@ export default function GiftsCard(props) {
 					href={props.gifts[props.index].link}
 					target="_blank"
 					rel="noreferrer"
-					onClick={(e) => e.preventDefault()}
 				>
 					<b>Link to Gift</b>
 				</a>
